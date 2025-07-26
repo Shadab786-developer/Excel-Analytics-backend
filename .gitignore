@@ -1,9 +1,10 @@
-/.vscode
-/node_modules
-./dist
+# Node modules
+/node_modules/
 
- *.env
- .env
- .env.*
- 
- .env
+# Build output
+/dist/
+
+/.vscode
+
+# Environment variables
+.env
