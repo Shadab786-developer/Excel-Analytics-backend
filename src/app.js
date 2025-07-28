@@ -14,6 +14,8 @@ app.use(coockieParser());
 
 // Import routes
 import healthcheckRouter from "./routes/healthcheck.route.js";
+import userRouter from "./routes/user.routes.js";
 // Routes
 app.use("/api/v1/healthcheck", healthcheckRouter);
+app.use("/api/v1/userAuth", userRouter);
 export { app };

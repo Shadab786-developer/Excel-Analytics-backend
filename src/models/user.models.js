@@ -16,7 +16,7 @@ import jwt from "jsonwebtoken";
 
 const userSchema = new Schema(
   {
-    username: {
+    userName: {
       type: String,
       require: true,
       unique: true,
@@ -38,6 +38,8 @@ const userSchema = new Schema(
     refresToken: {
       type: String,
     },
+    verificationCode: { type: Number },
+    isVerified: { type: Boolean },
   },
   { timestamps: true }
 );
@@ -77,4 +79,4 @@ userSchema.methods.generateRefreshToken = function () {
   );
 };
 
-export const User = mongoose.model("User", userSchema);
+export const Users = mongoose.model("Users", userSchema);
