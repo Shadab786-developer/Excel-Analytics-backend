@@ -43,19 +43,17 @@ const singIn = asyncHandler(async (req, res) => {
 
   try {
     // Generate a random 6-digit verification code
-    const verificationCode = Math.floor(
-      100000 + Math.random() * 900000
-    ).toString();
+    const verificationCode = Math.floor(1000 + Math.random() * 9000).toString();
     // Send verification email
     await sendEmail(
       email,
       "Verify your email",
       `<div style="max-width:400px; margin:0 auto;padding:28px 20px; background:#fff; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08); font-family:'Segoe UI',Arial,sans-serif;">
   <div style="text-align:center;">
-    <img src="https://content.jdmagicbox.com/v2/comp/delhi/p1/011pxx11.xx11.180419233547.s2p1/catalogue/myntra-warehouse-mohammadpur-delhi-warehouses-services-1o8sinohci-250.jpg;" alt="Myntra" style="height:300px; width:300px; margin-bottom:8px;">
+    <img src="https://content.jdmagicbox.com/v2/comp/delhi/p1/011pxx11.xx11.180419233547.s2p1/catalogue/myntra-warehouse-mohammadpur-delhi-warehouses-services-1o8sinohci-250.jpg;" alt="Excel-Analysis" style="height:300px; width:300px; margin-bottom:8px;">
     <h2 style="color:#ff3f6c; margin-bottom:8px;">Verify Your Email</h2>
     <p style="color:#333; font-size:16px; margin-bottom:24px;">
-      Thank you for signing up with Myntra!<br>
+      Thank you for signing up with Excel-Analysis!<br>
       Please use the code below to verify your email address.
     </p>
     <div style="display:inline-block; background:#fff; color:#ff3f6c; font-size:28px; letter-spacing:6px; border:1px solid #ff3f6c; padding:12px 32px; border-radius:6px; font-weight:bold; margin-bottom:24px;">
@@ -63,7 +61,7 @@ const singIn = asyncHandler(async (req, res) => {
     </div>
     <p style="color:#555; font-size:14px; margin-top:24px;">
       Didn’t request this? Please ignore this email.<br>
-      <b style="color:blue;">Need help?</b> Contact <a href="mailto:support@myntra.com" style="color:#ff3f6c; text-decoration:none;">support@myntra.com</a>
+      <b style="color:blue;">Need help?</b> Contact <a href="mailto:ashiksdevadiga8@gmail.com" style="color:#ff3f6c; text-decoration:none;">ashiksdevadiga8@gmail.com</a>
     </p>
   </div>
 </div>`
