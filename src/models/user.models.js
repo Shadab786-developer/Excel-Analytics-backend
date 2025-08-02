@@ -35,6 +35,11 @@ const userSchema = new Schema(
       type: String,
       requried: [true, "password is requried"],
     },
+    role: {
+      type: String,
+      enum: ["admin", "user"], // can be expanded later
+      default: "user",
+    },
     refresToken: {
       type: String,
     },
