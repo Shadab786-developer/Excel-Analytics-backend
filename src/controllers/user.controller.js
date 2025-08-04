@@ -26,16 +26,16 @@ const generateTokens = async (userId) => {
 };
 
 const singIn = asyncHandler(async (req, res) => {
-  const { userName, password, email } = req.body;
+  const { userName, password, email, role } = req.body;
 
   //verifying the field are requried
-  if (!email && !password && !userName) {
+  if (!email && !password && !userName && !role) {
     throw new ApiError(400, "All fields are required");
   }
 
   //Check if user was already exist or not
   const existedUser = await Users.findOne({
-    $or: [{ userName }, { email }],
+    $or: [{ userName }, { email }, { role }],
   });
   if (existedUser) {
     throw new ApiError(409, "User already exists with this username or email");
@@ -73,6 +73,7 @@ const singIn = asyncHandler(async (req, res) => {
       userName,
       email,
       password,
+      role,
       verificationCode,
       isVerified: false,
     });
@@ -114,16 +115,16 @@ const singIn = asyncHandler(async (req, res) => {
 
 const userLogin = asyncHandler(async (req, res) => {
   //getting data from request body
-  const { email, password } = req.body;
+  const { email, password, role } = req.body;
 
   //validate the inputs
-  if (!email && !password) {
+  if (!email && !password && !role) {
     throw new ApiError(400, "Email and password are required");
   }
 
   //find user by username and email
   const user = await Users.findOne({
-    $or: [{ email }],
+    $or: [{ email }, { role }],
   });
 
   if (!user) {

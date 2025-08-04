@@ -1,0 +1,39 @@
+{
+  "labels": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ],
+  "datasets": [
+    {
+      "label": "Sales",
+      "data": [
+        600,
+        200,
+        40,
+        500,
+        200,
+        1500,
+        100,
+        400,
+        800,
+        320,
+        2540,
+        1400
+      ],
+      "backgroundColor": "rgba(75, 192, 192, 0.2)",
+      "borderColor": "rgba(75, 192, 192, 1)",
+      "borderWidth": 1,
+      "fill": true
+    }
+  ]
+}
